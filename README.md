@@ -22,3 +22,23 @@ api:
 	curl -X GET http://127.0.0.1:5000/setup
 	curl -X GET http://127.0.0.1:5000/webpage
 ```
+
+Command
+
+```
+$ ml
+```
+
+Output
+
+```
+----------------------
+run:
+  run the flask web server
+----------------------
+api:
+  1. clean the test DB
+  2. set up the init data of test DB
+  3. call webpage API
+----------------------
+```
