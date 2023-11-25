@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 
+import os
 import re
+
+def find_makefile(start_dir='.'):
+    for root, dirs, files in os.walk(start_dir):
+        if 'Makefile' in files:
+            return os.path.join(root, 'Makefile')
+    return None
 
 def file_to_list(file_path):
     with open(file_path, 'r') as file:
@@ -8,8 +15,7 @@ def file_to_list(file_path):
 
     return lines
 
-# TODO: find Makefile recursively in the current workdir
-file_path = 'test/Makefile'
+file_path = find_makefile()
 
 instructions = {}
 instruction  = []
